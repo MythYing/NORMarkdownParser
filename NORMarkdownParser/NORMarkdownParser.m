@@ -215,9 +215,8 @@ int parser_strikethrough(hoedown_buffer *ob, const hoedown_buffer *text, void *o
     hoedown_document_render(document, output, input->data, input->size);
     hoedown_document_free(document);
     
-    NSString *raw = [[NSString alloc] initWithBytes:output->data length:output->size - 1 encoding:NSUTF8StringEncoding];
-
     if (stripped) {
+        NSString *raw = [[NSString alloc] initWithBytes:output->data length:output->size - 1 encoding:NSUTF8StringEncoding];
         *stripped = raw;
     }
     
